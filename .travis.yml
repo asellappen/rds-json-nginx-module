@@ -1,6 +1,10 @@
 sudo: required
 dist: trusty
 
+arch:
+ - amd64
+ - ppc64le
+ 
 os: linux
 
 language: c
