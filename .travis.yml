@@ -72,7 +72,10 @@ install:
   - git clone https://github.com/openresty/openresty.git ../ngx_openresty
 
 before_script:
-  - mysql -uroot -e 'create database ngx_test; grant all on ngx_test.* to "ngx_test"@"%" identified by "ngx_test"; flush privileges;'
+  # ERROR 1044 (42000) at line 1: Access denied for user 'root'@'localhost' to database 'ngx_test' only for ppc64le
+  - 	if [[ "$TRAVIS_CPU_ARCH" != "ppc64le" ]]; then 
+         mysql -uroot -e 'create database ngx_test; grant all on ngx_test.* to "ngx_test"@"%" identified by "ngx_test"; flush privileges;'
+	    fi
   - psql -c "create database ngx_test;" -U postgres
   - psql -c "create user ngx_test with password 'ngx_test';" -U postgres
   - psql -c "grant all privileges on database ngx_test to ngx_test;" -U postgres
