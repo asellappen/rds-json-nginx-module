@@ -1,5 +1,16 @@
+# ----------------------------------------------------------------------------
+#
+# Package             : rds-json-nginx-module
+# Source Repo         : https://github.com/openresty/rds-json-nginx-module
+# Travis Job Link     : https://travis-ci.com/github/asellappen/rds-json-nginx-module/
+# Created travis.yml  : Yes
+# Maintainer          : Arumugam N S <asellappen@yahoo.com> / Priya Seth<sethp@us.ibm.com>
+#
+# Script License      : Apache License, Version 2 or later
+#
+# ----------------------------------------------------------------------------
 sudo: required
-dist: trusty
+dist: focal
 
 arch:
  - amd64
