@@ -3,7 +3,7 @@
 # Package             : rds-json-nginx-module
 # Source Repo         : https://github.com/openresty/rds-json-nginx-module
 # Travis Job Link     : https://travis-ci.com/github/asellappen/rds-json-nginx-module/
-# Created travis.yml  : Yes
+# Created travis.yml  : No
 # Maintainer          : Arumugam N S <asellappen@yahoo.com> / Priya Seth<sethp@us.ibm.com>
 #
 # Script License      : Apache License, Version 2 or later
@@ -93,6 +93,7 @@ before_script:
 
 script:
   - tar xzf download-cache/drizzle7-2011.07.21.tar.gz && cd drizzle7-2011.07.21
+  - cat configure
   - ./configure --prefix=/usr --without-server > build.log 2>&1 || (cat build.log && exit 1)
   - sudo PATH=$PATH make libdrizzle-1.0 install-libdrizzle-1.0 > build.log 2>&1 || (cat build.log && exit 1)
   - cd ../luajit2
